@@ -1,1 +1,277 @@
-# 1win-landing-page-
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maelekezo Muhimu - 1win</title>
+
+  <style>
+    :root {
+      /* Rangi za 1win Dark/Light Theme */
+      --bg-color: #110e2e;
+      --card-bg: #ffffff;
+      --text-main: #1e1e2f;
+      --accent-blue: #0b1a50;
+      --promo-bg: #fffbe6;
+      --promo-border: #fadb14;
+      --promo-text: #e60000;
+      --btn-bg: #28a745;
+      --border-color: #f0f0f0;
+      --footer-text: #8c8c8c;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0c0926;
+        --card-bg: #19153b;
+        --text-main: #ffffff;
+        --accent-blue: #3b82f6;
+        --promo-bg: #262010;
+        --border-color: #2e285c;
+        --footer-text: #a0a0a0;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      max-width: 480px;
+      width: 100%;
+      padding: 25px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent-blue);
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    .instructions {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .instructions li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .step-num {
+      background-color: #1890ff;
+      color: #fff;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .promo-box {
+      background-color: var(--promo-bg);
+      border: 2px dashed var(--promo-border);
+      border-radius: 10px;
+      padding: 12px;
+      margin: 20px 0;
+    }
+
+    .promo-title {
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #8c8c8c;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .promo-code {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--promo-text);
+      letter-spacing: 1px;
+    }
+
+    .btn-register {
+      display: block;
+      background-color: var(--btn-bg);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 14px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+      margin-bottom: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-register:active {
+      transform: scale(0.98);
+    }
+
+    /* Sehemu ya FAQ Accordion */
+    .faq-section {
+      text-align: left;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
+
+    .faq-section h3 {
+      font-size: 16px;
+      color: var(--accent-blue);
+      margin-bottom: 15px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    details summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] .arrow {
+      transform: rotate(90deg);
+    }
+
+    .arrow {
+      color: #1890ff;
+      font-size: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      padding: 10px 0 15px 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #8c8c8c;
+      text-align: left;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    /* Sehemu ya Haki Miliki (Footer) */
+    .footer-copyright {
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      font-size: 11px;
+      color: var(--footer-text);
+      text-align: center;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">LEGIT ANALYSIS</div>
+    
+    <ol class="instructions">
+      <li>
+        <span class="step-num">1</span>
+        <span>Bofya kitufe cha kijani chini kujiandikisha.</span>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <span>Ingiza Promo Code hapo chini ili akaunti yako iwekwe kwenye mfumo wa kupokea Zawadi na Bonus.</span>
+      </li>
+    </ol>
+
+    <div class="promo-box">
+      <p class="promo-title">TUMIA PROMO CODE HII:</p>
+      <p class="promo-code">LEGEND77</p>
+    </div>
+
+    <a href="LINK_YAKO_YA_AFFILIATE_HAPA" class="btn-register" target="_blank">REGISTRATION</a>
+
+    <div class="faq-section">
+      <h3>Maswali Yanayoulizwa Sana (FAQ)</h3>
+
+      <details class="faq-item">
+        <summary>
+          <span>Jinsi ya kuweka Pesa (Deposit)?</span>
+          <span class="arrow">&rarr;</span>
+        </summary>
+        <div class="faq-answer">
+          Ingia kwenye akaunti yako ya 1win, bofya kitufe cha Deposit (Weka Pesa) juu kulia. Chagua njia ya malipo unayotaka kutumia (mfano: M-Pesa, Airtel Money, Tigo Pesa, au Halopesa), weka kiasi, kisha fuata maelekezo ya kumalizia muamala kwenye simu yako.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Jinsi ya kutoa Pesa (Withdraw)?</span>
+          <span class="arrow">&rarr;</span>
+        </summary>
+        <div class="faq-answer">
+          Nenda kwenye sehemu ya Profile au Akaunti, chagua Withdrawal (Kutoa Pesa). Chagua mtandao wako wa simu, ingiza namba yako ya simu pamoja na kiasi unachotaka kutoa, kisha thibitisha. Pesa itaingia kwenye simu yako papo hapo.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Jinsi ya kuweka "Bet Code" (Kujaza mkeka ulioandaliwa)?</span>
+          <span class="arrow">&rarr;</span>
+        </summary>
+        <div class="faq-answer">
+          Kwenye menu ya 1win, tafuta sehemu iliyoandikwa Bet Slip (Mkeka). Bofya icon au chaguo la Load Bet Slip / Coupon, ingiza ile Code ya mkeka uliyopewa, kisha bofya Load. Mkeka wako na timu zote zitajijaza kiotomatiki.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Kwanini nitumie Promo Code wakati wa kusajili?</span>
+          <span class="arrow">&rarr;</span>
+        </summary>
+        <div class="faq-answer">
+          Kutumia promo code LEGEND77 kunakuwezesha kupata Bonus ya hadi 500% kwenye deposit zako za mwanzo, pamoja na zawadi za ziada za kila wiki kwenye akaunti yako mpya ya 1win.
+        </div>
+      </details>
+    </div>
+
+    <!-- HAKI MILIKI -->
+    <div class="footer-copyright">
+      &copy; 2026 LEGEND WINNERS. Haki zote zimehifadhiwa.
+    </div>
+
+  </div>
+
+</body>
+</html>
