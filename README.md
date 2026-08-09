@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maelekezo Muhimu - 1win</title>
+  <title>Legend winners - 1win</title>
 
   <style>
     :root {
@@ -202,7 +202,7 @@
 <body>
 
   <div class="container">
-    <div class="logo">LEGIT ANALYSIS</div>
+    <div class="logo">LEGEND WINNERS</div>
     
     <ol class="instructions">
       <li>
