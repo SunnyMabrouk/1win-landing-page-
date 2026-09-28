@@ -3,33 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legend winners - 1win</title>
+  <title>Legend Winners - BetWinner</title>
 
   <style>
     :root {
-      /* Rangi za betwinner Dark/green Theme */
-      --bg-color: #110e2e;
-      --card-bg: #ffffff;
-      --text-main: #1e1e2f;
-      --accent-blue: #0b1a50;
-      --promo-bg: #fffbe6;
-      --promo-border: #fadb14;
-      --promo-text: #e60000;
-      --btn-bg: #28a745;
-      --border-color: #f0f0f0;
-      --footer-text: #8c8c8c;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-color: #0c0926;
-        --card-bg: #19153b;
-        --text-main: #ffffff;
-        --accent-blue: #3b82f6;
-        --promo-bg: #262010;
-        --border-color: #2e285c;
-        --footer-text: #a0a0a0;
-      }
+      /* Rangi Halisi za BetWinner */
+      --bg-color: #082819;         /* Dark Green Background */
+      --card-bg: #0e3b26;        /* BetWinner Dark Green Card */
+      --text-main: #ffffff;
+      --accent-green: #a3d600;   /* BetWinner Lime / Yellow-Green */
+      --promo-bg: #144f33;
+      --promo-border: #a3d600;
+      --promo-text: #ffcc00;     /* Gold Accent Text */
+      --btn-bg: #a3d600;
+      --btn-text: #082819;
+      --border-color: #195e3d;
+      --footer-text: #88a396;
     }
 
     * {
@@ -54,16 +43,20 @@
       width: 100%;
       padding: 25px 20px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       text-align: center;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--accent-blue);
       margin-bottom: 25px;
-      letter-spacing: 0.5px;
+    }
+
+    .logo img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-green);
     }
 
     .instructions {
@@ -81,15 +74,15 @@
     }
 
     .step-num {
-      background-color: #1890ff;
-      color: #fff;
+      background-color: var(--accent-green);
+      color: var(--bg-color);
       border-radius: 50%;
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: bold;
       margin-right: 12px;
       flex-shrink: 0;
@@ -98,38 +91,38 @@
     .promo-box {
       background-color: var(--promo-bg);
       border: 2px dashed var(--promo-border);
-      border-radius: 10px;
-      padding: 12px;
+      border-radius: 12px;
+      padding: 14px;
       margin: 20px 0;
     }
 
     .promo-title {
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 1px;
-      color: #8c8c8c;
+      color: #a3a3a3;
       margin-bottom: 5px;
       font-weight: 600;
     }
 
     .promo-code {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       color: var(--promo-text);
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
     .btn-register {
       display: block;
       background-color: var(--btn-bg);
-      color: #ffffff;
+      color: var(--btn-text);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
       font-size: 16px;
       padding: 14px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
-      margin-bottom: 30px;
-      transition: transform 0.2s ease;
+      box-shadow: 0 4px 15px rgba(163, 214, 0, 0.3);
+      margin-bottom: 25px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
     .btn-register:active {
@@ -137,57 +130,70 @@
     }
 
     /* Sehemu ya FAQ Accordion */
-    .faq-section {
+    .faq-container {
+      width: 100%;
+      margin: 20px auto;
       text-align: left;
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
     }
 
-    .faq-section h3 {
-      font-size: 16px;
-      color: var(--accent-blue);
+    .faq-title {
+      color: var(--accent-green);
+      font-size: 17px;
+      font-weight: bold;
+      text-align: center;
       margin-bottom: 15px;
     }
 
     .faq-item {
       border-bottom: 1px solid var(--border-color);
+      padding: 12px 0;
     }
 
-    details summary {
+    .faq-item summary {
+      font-weight: 600;
+      font-size: 14px;
+      color: #ffffff;
+      cursor: pointer;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      cursor: pointer;
-      padding: 12px 0;
-      font-size: 13px;
-      font-weight: 600;
+      user-select: none;
     }
 
-    details summary::-webkit-details-marker {
+    .faq-item summary::-webkit-details-marker {
       display: none;
     }
 
-    details[open] .arrow {
+    .faq-item summary::after {
+      content: '➔';
+      font-size: 13px;
+      color: var(--accent-green);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary::after {
       transform: rotate(90deg);
     }
 
-    .arrow {
-      color: #1890ff;
-      font-size: 16px;
-      transition: transform 0.2s ease;
-    }
-
-    .faq-answer {
-      padding: 10px 0 15px 0;
+    .faq-content {
+      margin-top: 10px;
       font-size: 13px;
       line-height: 1.6;
-      color: #8c8c8c;
-      text-align: left;
-      border-top: 1px dashed var(--border-color);
+      color: #d1d5db;
     }
 
-    /* Sehemu ya Haki Miliki (Footer) */
+    .faq-content ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .faq-content li {
+      margin-bottom: 6px;
+    }
+
+    /* Footer Copyright */
     .footer-copyright {
       margin-top: 25px;
       padding-top: 15px;
@@ -195,7 +201,6 @@
       font-size: 11px;
       color: var(--footer-text);
       text-align: center;
-      line-height: 1.4;
     }
   </style>
 </head>
@@ -203,172 +208,90 @@
 
   <div class="container">
     <div class="logo">
-  <img src="logo.png" alt="LEGEND WINNERS" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #3b82f6;">
-</div>
+      <img src="logo.png" alt="LEGEND WINNERS">
+    </div>
     
     <ol class="instructions">
       <li>
         <span class="step-num">1</span>
-        <span>Bofya kitufe cha kijani chini kufungua account yako ya betwinner.</span>
+        <span>Bofya kitufe cha kijani chini kufungua akaunti yako ya BetWinner.</span>
       </li>
       <li>
         <span class="step-num">2</span>
-        <span>Ingiza Promo Code ya bonus hapo chini utaingiza mara moja tu unapofungua account.</span>
+        <span>Ingiza Promo Code ya bonus hapo chini wakati wa kujisajili.</span>
       </li>
     </ol>
 
     <div class="promo-box">
       <p class="promo-title">PROMO CODE</p>
-      <p class="promo-code"></p>
+      <p class="promo-code">TARICCO</p>
     </div>
 
-    <a href="https://bwredir.com/38aD/"class="btn-register" target="_blank">REGISTRATION</a>
+    <a href="https://bwredir.com/38aD" class="btn-register" target="_blank">REGISTRATION</a>
 
-<!-- Mwanzo wa Sehemu ya FAQ -->
-<div class="faq-container">
-  <h3 class="faq-title">Maswali Yanayoulizwa Sana (FAQ)</h3>
+    <!-- Sehemu ya FAQ -->
+    <div class="faq-container">
+      <h3 class="faq-title">Maswali Yanayoulizwa Sana (FAQ)</h3>
 
-  <!-- Swali la 1 -->
-  <details class="faq-item">
-    <summary><span>Jinsi ya kuweka Pesa (Deposit)?</span></summary>
-    <div class="faq-content">
-      <ol>
-        <li>Ingia kwenye akaunti yako ya betwinner.</li>
-        <li>Bonyeza kitufe cha "Deposit" au alama ya "+" juu ya kioo.</li>
-        <li>Chagua mtandao wako wa simu (M-Pesa, Tigo Pesa, Airtel Money, au Halopesa).</li>
-        <li>Weka kiasi unachotaka na namba yako ya simu, kisha bonyeza Confirm. Subiri ujumbe wa siri kwenye simu yako kuweka PIN ili kukamilisha malipo.</li>
-      </ol>
-    </div>
-  </details>
-
-  <!-- Swali la 2 -->
-  <details class="faq-item">
-    <summary><span>Jinsi ya kutoa Pesa (Withdraw)?</span></summary>
-    <div class="faq-content">
-      <ol>
-        <li>Nenda kwenye sehemu ya "My Account" kisha chagua "Withdraw Funds".</li>
-        <li>Chagua mtandao ule ulioutumia kuweka pesa.</li>
-        <li>Weka kiasi unachotaka kutoa na namba yako ya simu.</li>
-        <li>Pesa itaingia moja kwa moja kwenye simu yako ndani ya dakika chache baada ya ombi lako kuidhinishwa.</li>
-      </ol>
-    </div>
-  </details>
-
-  <!-- Swali la 3 -->
-  <details class="faq-item">
-    <summary><span>Jinsi ya kuweka "Bet Code" (Kujaza mkeka ulioandaliwa)?</span></summary>
-    <div class="faq-content">
-      <ol>
-        <li>Copy code ya mkeka niliyotuma kwenye group.</li>
-        <li>Fungua app yako, kisha nenda sehemu ya "Bet Slip" (iko chini katikati).</li>
-        <li>Bonyeza alama ya vidoti vitatu juu au kitufe cha kualika/kupakia mkeka, kisha chagua "Download Bet Slip".</li>
-        <li>Paste au andika ile kodi uliyoinakili, kisha bonyeza OK. Mechi zote zitaiipakia zenyewe, wewe weka kiasi chako cha kubetia.</li>
-      </ol>
-    </div>
-  </details>
-
-  <!-- Swali la 4 -->
-  <details class="faq-item">
-    <summary><span>Kwanini nitumie Promo Code?</span></summary>
-    <div class="faq-content">
-      <p>Inakuwezesha akaunti yako kuwekwa kwenye mfumo wa kupokea Zawadi na Bonus pamoja na kuingizwa kwenye mfumo wa mahesabu ya ushindi.</p>
-    </div>
-  </details>
-</div>
-
-<!-- CSS ya Marekebisho -->
-<style>
-  .faq-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
-    text-align: left; /* Inahakikisha kila kitu kinaanzia kushoto */
-  }
-
-  .faq-title {
-    color: #8bb2f9; /* Rangi ya bluu nyepesi inayoonekana vizuri kwenye dark mode */
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Mstari wa chini unaoonekana kwenye dark mode */
-    padding: 14px 0;
-  }
-
-  .faq-item summary {
-    font-weight: bold;
-    font-size: 15px;
-    color: #ffffff; /* Rangi nyeupe kwa maswali */
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    user-select: none;
-  }
-
-  .faq-item summary span {
-    text-align: left;
-    padding-right: 15px;
-  }
-
-  .faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  /* Mshale wa kulia */
-  .faq-item summary::after {
-    content: '➔';
-    font-size: 14px;
-    color: #8bb2f9;
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-  }
-
-  /* Mshale unazunguka chini ukibofya */
-  .faq-item[open] summary::after {
-    transform: rotate(90deg);
-  }
-
-  .faq-content {
-    margin-top: 12px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #d1d5db; /* Rangi ya majibu */
-    text-align: left;
-  }
-
-  .faq-content ol {
-    margin: 0;
-    padding-left: 20px;
-  }
-
-  .faq-content li {
-    margin-bottom: 8px;
-  }
-</style>
-<!-- Mwisho wa FAQ -->
-
-<!-- WhatsApp Channel Banner -->
-<div style="background: linear-gradient(135deg, #075e54, #25d366) !important; border-radius: 12px; padding: 14px 16px; margin: 25px 0 15px 0; display: flex !important; align-items: center !important; justify-content: space-between !important; text-align: left !important; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#ffffff">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-        </svg>
-        <div>
-            <h4 style="font-size: 14px; color: #ffffff !important; font-weight: bold; margin: 0; line-height: 1.2;">WhatsApp Channel</h4>
-            <p style="font-size: 11px; color: #e0f2fe !important; margin: 3px 0 0 0;">Pata Mikeka ya Bure Kila Siku!</p>
+      <details class="faq-item">
+        <summary><span>Jinsi ya kuweka Pesa (Deposit)?</span></summary>
+        <div class="faq-content">
+          <ol>
+            <li>Ingia kwenye akaunti yako ya BetWinner.</li>
+            <li>Bonyeza kitufe cha "Deposit" au alama ya "+" juu.</li>
+            <li>Chagua mtandao wako wa simu (M-Pesa, Tigo Pesa, Airtel Money, au HaloPesa).</li>
+            <li>Weka kiasi na namba yako ya simu, kisha bonyeza Confirm. Weka PIN yako kwenye simu kukamilisha.</li>
+          </ol>
         </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span>Jinsi ya kutoa Pesa (Withdraw)?</span></summary>
+        <div class="faq-content">
+          <ol>
+            <li>Nenda kwenye "My Account" kisha chagua "Withdraw Funds".</li>
+            <li>Chagua mtandao wa simu ulioutumia kuweka pesa.</li>
+            <li>Weka kiasi na namba yako ya simu.</li>
+            <li>Pesa itaingia kwenye simu yako mara moja baada ya kuidhinishwa.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span>Jinsi ya kuweka "Bet Code" (Kujaza mkeka)?</span></summary>
+        <div class="faq-content">
+          <ol>
+            <li>Copy code ya mkeka uliyopata kwenye group.</li>
+            <li>Fungua app kisha nenda sehemu ya "Bet Slip" (chini katikati).</li>
+            <li>Bonyeza alama ya vidoti vitatu au chaguo la kupakia mkeka, kisha chagua "Download Bet Slip".</li>
+            <li>Paste ile kodi kisha bonyeza OK. Mechi zitapakia zenyewe.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span>Kwanini nitumie Promo Code?</span></summary>
+        <div class="faq-content">
+          <p>Inakuwezesha akaunti yako kupata 100% First Deposit Bonus pamoja na kuingizwa kwenye mfumo wa mahesabu ya ushindi ya BetWinner.</p>
+        </div>
+      </details>
     </div>
-    <a href="https://whatsapp.com/channel/0029Vb8KnGWJUM2heialyp1q" target="_blank" rel="noopener noreferrer" style="background-color: #ffffff !important; color: #075e54 !important; font-weight: bold; padding: 8px 14px; border-radius: 6px; text-decoration: none !important; font-size: 12px; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-        JIUNGE
-    </a>
-</div>
+
+    <!-- WhatsApp Channel Banner -->
+    <div style="background: linear-gradient(135deg, #075e54, #25d366) !important; border-radius: 12px; padding: 14px 16px; margin: 25px 0 15px 0; display: flex !important; align-items: center !important; justify-content: space-between !important; text-align: left !important; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <div>
+                <h4 style="font-size: 14px; color: #ffffff !important; font-weight: bold; margin: 0; line-height: 1.2;">WhatsApp Channel</h4>
+                <p style="font-size: 11px; color: #e0f2fe !important; margin: 3px 0 0 0;">Pata Mikeka ya Bure Kila Siku!</p>
+            </div>
+        </div>
+        <a href="https://whatsapp.com/channel/0029Vb8KnGWJUM2heialyp1q" target="_blank" rel="noopener noreferrer" style="background-color: #ffffff !important; color: #075e54 !important; font-weight: bold; padding: 8px 14px; border-radius: 6px; text-decoration: none !important; font-size: 12px; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+            JIUNGE
+        </a>
+    </div>
    
     <!-- HAKI MILIKI -->
     <div class="footer-copyright">
