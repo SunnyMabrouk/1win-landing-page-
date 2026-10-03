@@ -6,17 +6,20 @@
     <title>Maelekezo Muhimu - 1xBet Members</title>
     <style>
         :root {
-            --primary-color: #0d47a1; /* Rangi ya 1xBet bluu */
-            --secondary-color: #ffca28; /* Rangi ya njano kwa msisitizo */
-            --text-color: #333;
-            --bg-color: #f5f7fa;
-            --success-color: #2e7d32;
+            --bg-main: #1b2838;       /* Exact 1xBet app background */
+            --card-bg: #233548;       /* Exact 1xBet card color */
+            --border-color: #2a3e56;  /* Soft divider border */
+            --primary-accent: #3a86ff;/* 1xBet primary blue */
+            --text-main: #e1e8f0;     /* Soft off-white */
+            --text-muted: #8b9eb3;    /* Muted grey blue for subtle text */
+            --promo-color: #ffca28;   /* Soft yellow accent */
+            --btn-green: #2e7d32;     /* Registration green */
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             display: flex;
@@ -26,104 +29,110 @@
         }
 
         .container {
-            background-color: #ffffff;
+            background-color: var(--card-bg);
             max-width: 500px;
             width: 90%;
             margin: 20px auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
             text-align: center;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
         }
 
         h1 {
-            font-size: 20px;
-            color: #222;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #eee;
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
 
         h2 {
-            font-size: 18px;
-            color: var(--primary-color);
-            margin: 30px 0 15px 0;
+            font-size: 16px;
+            color: var(--primary-accent);
+            margin: 25px 0 15px 0;
             text-align: left;
+            font-weight: 700;
         }
 
         .instructions-box {
             text-align: left;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .step {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .step-number {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: #1b2838;
+            color: var(--primary-accent);
+            border: 1px solid var(--border-color);
             font-weight: bold;
             border-radius: 50%;
-            width: 25px;
-            height: 25px;
+            width: 24px;
+            height: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 12px;
+            margin-right: 10px;
             flex-shrink: 0;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .step-text {
-            font-size: 15px;
-            line-height: 1.5;
+            font-size: 14px;
+            line-height: 1.4;
+            color: var(--text-main);
         }
 
         .promo-box {
-            background-color: #fff9e6;
-            border: 2px dashed var(--secondary-color);
-            padding: 15px;
+            background-color: #1b2838;
+            border: 1px dashed var(--primary-accent);
+            padding: 12px;
             border-radius: 8px;
-            margin: 25px 0;
+            margin: 20px 0;
         }
 
         .promo-label {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-bottom: 5px;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            font-weight: 600;
         }
 
         .promo-code {
             font-size: 24px;
-            font-weight: bold;
-            color: #d32f2f;
-            letter-spacing: 2px;
+            font-weight: 800;
+            color: var(--promo-color);
+            letter-spacing: 1.5px;
         }
 
         .cta-button {
             display: block;
-            background-color: var(--success-color);
-            color: white;
+            background-color: var(--btn-green);
+            color: #ffffff;
             text-decoration: none;
-            padding: 15px 20px;
-            font-size: 18px;
+            padding: 14px 18px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
-            margin-bottom: 20px;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
         }
 
         .cta-button:hover {
@@ -137,14 +146,14 @@
         }
 
         .faq-item {
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border-color);
             padding: 12px 0;
         }
 
         .faq-question {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
-            color: #333;
+            color: var(--text-main);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -154,8 +163,8 @@
 
         .faq-question::after {
             content: '➔';
-            font-size: 12px;
-            color: var(--primary-color);
+            font-size: 11px;
+            color: var(--primary-accent);
             transition: transform 0.3s ease;
         }
 
@@ -167,9 +176,9 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .faq-answer p {
@@ -178,16 +187,16 @@
 
         /* BANNER NDOGO YA WHATSAPP */
         .whatsapp-compact-card {
-            background-color: #25d366;
-            color: #ffffff;
-            padding: 12px 15px;
-            border-radius: 10px;
+            background-color: #1b2838;
+            border: 1px solid #2e7d32;
+            color: var(--text-main);
+            padding: 10px 14px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 25px 0 15px 0;
+            margin: 20px 0 10px 0;
             text-align: left;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
         }
 
         .wa-text-box {
@@ -196,37 +205,37 @@
         }
 
         .wa-text-title {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
+            color: #25d366;
             margin-bottom: 2px;
-            line-height: 1.3;
         }
 
         .wa-text-sub {
             font-size: 11px;
-            opacity: 0.9;
+            color: var(--text-muted);
         }
 
         .wa-compact-btn {
-            background-color: #ffffff;
-            color: #128c7e;
-            padding: 8px 14px;
+            background-color: #25d366;
+            color: #1b2838;
+            padding: 7px 12px;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: bold;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 800;
             white-space: nowrap;
             transition: 0.2s;
         }
 
         .wa-compact-btn:hover {
-            background-color: #f0f0f0;
+            background-color: #1ebd56;
         }
 
         .footer {
-            margin-top: 25px;
-            font-size: 12px;
-            color: #888;
+            margin-top: 20px;
+            font-size: 11px;
+            color: var(--text-muted);
         }
     </style>
 </head>
@@ -259,7 +268,7 @@
             REGISTRATION
         </a>
 
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;">
 
         <!-- SEHEMU YA MASWALI NA MAJIBU -->
         <h2>Maswali Yanayoulizwa Sana (FAQ)</h2>
