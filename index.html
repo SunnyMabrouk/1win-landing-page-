@@ -1,304 +1,353 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legend Winners - BetWinner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maelekezo Muhimu - 1xBet Members</title>
+    <style>
+        :root {
+            --primary-color: #0d47a1; /* Rangi ya 1xBet bluu */
+            --secondary-color: #ffca28; /* Rangi ya njano kwa msisitizo */
+            --text-color: #333;
+            --bg-color: #f5f7fa;
+            --success-color: #2e7d32;
+        }
 
-  <style>
-    :root {
-      /* Rangi Halisi za BetWinner */
-      --bg-color: #082819;         /* Dark Green Background */
-      --card-bg: #0e3b26;        /* BetWinner Dark Green Card */
-      --text-main: #ffffff;
-      --accent-green: #a3d600;   /* BetWinner Lime / Yellow-Green */
-      --promo-bg: #144f33;
-      --promo-border: #a3d600;
-      --promo-text: #ffcc00;     /* Gold Accent Text */
-      --btn-bg: #a3d600;
-      --btn-text: #082819;
-      --border-color: #195e3d;
-      --footer-text: #88a396;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        .container {
+            background-color: #ffffff;
+            max-width: 500px;
+            width: 90%;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      margin: 0;
-      padding: 20px 10px;
-      display: flex;
-      justify-content: center;
-    }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
 
-    .container {
-      background-color: var(--card-bg);
-      max-width: 480px;
-      width: 100%;
-      padding: 25px 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      text-align: center;
-    }
+        h1 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
 
-    .logo {
-      margin-bottom: 25px;
-    }
+        h2 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin: 30px 0 15px 0;
+            text-align: left;
+        }
 
-    .logo jpg {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent-green);
-    }
+        .instructions-box {
+            text-align: left;
+            margin-bottom: 25px;
+        }
 
-    .instructions {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 20px;
-    }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
 
-    .instructions li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 15px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
 
-    .step-num {
-      background-color: var(--accent-green);
-      color: var(--bg-color);
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: bold;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
+        .step-text {
+            font-size: 15px;
+            line-height: 1.5;
+        }
 
-    .promo-box {
-      background-color: var(--promo-bg);
-      border: 2px dashed var(--promo-border);
-      border-radius: 12px;
-      padding: 14px;
-      margin: 20px 0;
-    }
+        .promo-box {
+            background-color: #fff9e6;
+            border: 2px dashed var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
 
-    .promo-title {
-      font-size: 12px;
-      letter-spacing: 1px;
-      color: #a3a3a3;
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
+        .promo-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 5px;
+        }
 
-    .promo-code {
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--promo-text);
-      letter-spacing: 2px;
-    }
+        .promo-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d32f2f;
+            letter-spacing: 2px;
+        }
 
-    .btn-register {
-      display: block;
-      background-color: var(--btn-bg);
-      color: var(--btn-text);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 16px;
-      padding: 14px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(163, 214, 0, 0.3);
-      margin-bottom: 25px;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
+        .cta-button {
+            display: block;
+            background-color: var(--success-color);
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            margin-bottom: 20px;
+        }
 
-    .btn-register:active {
-      transform: scale(0.98);
-    }
+        .cta-button:hover {
+            background-color: #1b5e20;
+        }
 
-    /* Sehemu ya FAQ Accordion */
-    .faq-container {
-      width: 100%;
-      margin: 20px auto;
-      text-align: left;
-    }
+        /* --- SEHEMU YA MASWALI NA MAJIBU (FAQ) --- */
+        .faq-section {
+            text-align: left;
+            margin-top: 10px;
+        }
 
-    .faq-title {
-      color: var(--accent-green);
-      font-size: 17px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 15px;
-    }
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 12px 0;
+        }
 
-    .faq-item {
-      border-bottom: 1px solid var(--border-color);
-      padding: 12px 0;
-    }
+        .faq-question {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
 
-    .faq-item summary {
-      font-weight: 600;
-      font-size: 14px;
-      color: #ffffff;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
+        .faq-question::after {
+            content: '➔';
+            font-size: 12px;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
 
-    .faq-item summary::-webkit-details-marker {
-      display: none;
-    }
+        .faq-item.active .faq-question::after {
+            transform: rotate(90deg);
+        }
 
-    .faq-item summary::after {
-      content: '➔';
-      font-size: 13px;
-      color: var(--accent-green);
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
 
-    .faq-item[open] summary::after {
-      transform: rotate(90deg);
-    }
+        .faq-answer p {
+            margin: 10px 0 0 0;
+        }
 
-    .faq-content {
-      margin-top: 10px;
-      font-size: 13px;
-      line-height: 1.6;
-      color: #d1d5db;
-    }
+        /* BANNER NDOGO YA WHATSAPP */
+        .whatsapp-compact-card {
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 12px 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 25px 0 15px 0;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+        }
 
-    .faq-content ol {
-      margin: 0;
-      padding-left: 20px;
-    }
+        .wa-text-box {
+            flex: 1;
+            padding-right: 10px;
+        }
 
-    .faq-content li {
-      margin-bottom: 6px;
-    }
+        .wa-text-title {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
 
-    /* Footer Copyright */
-    .footer-copyright {
-      margin-top: 25px;
-      padding-top: 15px;
-      border-top: 1px solid var(--border-color);
-      font-size: 11px;
-      color: var(--footer-text);
-      text-align: center;
-    }
-  </style>
+        .wa-text-sub {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .wa-compact-btn {
+            background-color: #ffffff;
+            color: #128c7e;
+            padding: 8px 14px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: 0.2s;
+        }
+
+        .wa-compact-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="logo">
-      <img src="logo.jpg" alt="LEGEND WINNERS">
-    </div>
-    
-    <ol class="instructions">
-      <li>
-        <span class="step-num">1</span>
-        <span>Bofya kitufe cha kijani chini kufungua akaunti yako ya BetWinner.</span>
-      </li>
-      <li>
-        <span class="step-num">2</span>
-        <span>Ingiza Promo Code ya bonus hapo chini wakati wa kujisajili.</span>
-      </li>
-    </ol>
-
-    <div class="promo-box">
-      <p class="promo-title">PROMO CODE</p>
-      <p class="promo-code">TARICCO</p>
-    </div>
-
-    <a href="https://bwredir.com/38aD" class="btn-register" target="_blank">REGISTRATION</a>
-
-    <!-- Sehemu ya FAQ -->
-    <div class="faq-container">
-      <h3 class="faq-title">Maswali Yanayoulizwa Sana (FAQ)</h3>
-
-      <details class="faq-item">
-        <summary><span>Jinsi ya kuweka Pesa (Deposit)?</span></summary>
-        <div class="faq-content">
-          <ol>
-            <li>Ingia kwenye akaunti yako ya BetWinner.</li>
-            <li>Bonyeza kitufe cha "Deposit" au alama ya "+" juu.</li>
-            <li>Chagua mtandao wako wa simu (M-Pesa, Tigo Pesa, Airtel Money, au HaloPesa).</li>
-            <li>Weka kiasi na namba yako ya simu, kisha bonyeza Confirm. Weka PIN yako kwenye simu kukamilisha.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary><span>Jinsi ya kutoa Pesa (Withdraw)?</span></summary>
-        <div class="faq-content">
-          <ol>
-            <li>Nenda kwenye "My Account" kisha chagua "Withdraw Funds".</li>
-            <li>Chagua mtandao wa simu ulioutumia kuweka pesa.</li>
-            <li>Weka kiasi na namba yako ya simu.</li>
-            <li>Pesa itaingia kwenye simu yako mara moja baada ya kuidhinishwa.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary><span>Jinsi ya kuweka "Bet Code" (Kujaza mkeka)?</span></summary>
-        <div class="faq-content">
-          <ol>
-            <li>Copy code ya mkeka uliyopata kwenye group.</li>
-            <li>Fungua app kisha nenda sehemu ya "Bet Slip" (chini katikati).</li>
-            <li>Bonyeza alama ya vidoti vitatu au chaguo la kupakia mkeka, kisha chagua "Download Bet Slip".</li>
-            <li>Paste ile kodi kisha bonyeza OK. Mechi zitapakia zenyewe.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary><span>Kwanini nitumie Promo Code?</span></summary>
-        <div class="faq-content">
-          <p>Inakuwezesha akaunti yako kupata 100% First Deposit Bonus pamoja na kuingizwa kwenye mfumo wa mahesabu ya ushindi ya BetWinner.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- WhatsApp Channel Banner -->
-    <div style="background: linear-gradient(135deg, #075e54, #25d366) !important; border-radius: 12px; padding: 14px 16px; margin: 25px 0 15px 0; display: flex !important; align-items: center !important; justify-content: space-between !important; text-align: left !important; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#ffffff">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-            </svg>
-            <div>
-                <h4 style="font-size: 14px; color: #ffffff !important; font-weight: bold; margin: 0; line-height: 1.2;">WhatsApp Channel</h4>
-                <p style="font-size: 11px; color: #e0f2fe !important; margin: 3px 0 0 0;">Pata Mikeka ya Bure Kila Siku!</p>
+    <div class="container">
+        <div class="logo">LEGEND WINNERS</div>
+        <h1></h1>
+        
+        <!-- Maelekezo ya Usajili -->
+        <div class="instructions-box">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Bofya kitufe cha kijani chini kujiandikisha.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Ingiza Promo Code hapo chini ili akaunti yako iwekwe kwenye mfumo wa kupokea Zawadi na Bonus.</div>
             </div>
         </div>
-        <a href="https://whatsapp.com/channel/0029Vb8KnGWJUM2heialyp1q" target="_blank" rel="noopener noreferrer" style="background-color: #ffffff !important; color: #075e54 !important; font-weight: bold; padding: 8px 14px; border-radius: 6px; text-decoration: none !important; font-size: 12px; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-            JIUNGE
+
+        <!-- Sehemu ya Promo Code -->
+        <div class="promo-box">
+            <div class="promo-label">Tumia Promo Code Hii:</div>
+            <div class="promo-code">25SUNNY25</div>
+        </div>
+
+        <!-- Kitufe cha Usajili -->
+        <a href="https://shorturl.at/xxvoc" target="_blank" class="cta-button">
+            REGISTRATION
         </a>
-    </div>
-   
-    <!-- HAKI MILIKI -->
-    <div class="footer-copyright">
-      &copy; 2026 LEGEND WINNERS. All rights reserved. 
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+        <!-- SEHEMU YA MASWALI NA MAJIBU -->
+        <h2>Maswali Yanayoulizwa Sana (FAQ)</h2>
+        
+        <div class="faq-section">
+            
+            <!-- Swali la 1 -->
+            <div class="faq-item">
+                <div class="faq-question">Jinsi ya kuweka Pesa (Deposit)?</div>
+                <div class="faq-answer">
+                    <p>1. Ingia kwenye akaunti yako ya 1xBet.<br>
+                    2. Bonyeza kitufe cha <strong>"Deposit"</strong> au alama ya <strong>"+"</strong> juu ya kioo.<br>
+                    3. Chagua mtandao wako wa simu (M-Pesa, Tigo Pesa, Airtel Money, au Halopesa).<br>
+                    4. Weka kiasi unachotaka na namba yako ya simu, kisha bonyeza Confirm. Subiri ujumbe wa siri kwenye simu yako kuweka PIN ili kukamilisha malipo.</p>
+                </div>
+            </div>
+
+            <!-- Swali la 2 -->
+            <div class="faq-item">
+                <div class="faq-question">Jinsi ya kutoa Pesa (Withdraw)?</div>
+                <div class="faq-answer">
+                    <p>1. Nenda kwenye sehemu ya <strong>"My Account"</strong> kisha chagua <strong>"Withdraw Funds"</strong>.<br>
+                    2. Chagua mtandao ule ule ulioutumia kuweka pesa.<br>
+                    3. Weka kiasi unachotaka kutoa na namba yako ya simu.<br>
+                    4. Pesa itaingia moja kwa moja kwenye simu yako ndani ya dakika chache baada ya ombi lako kuidhinishwa.</p>
+                </div>
+            </div>
+
+            <!-- Swali la 3 -->
+            <div class="faq-item">
+                <div class="faq-question">Jinsi ya kuweka "Bet Code" (Kujaza mkeka ulioandaliwa)?</div>
+                <div class="faq-answer">
+                    <p>1. Copy code ya mkeka niliyotuma kwenye group.<br>
+                    2. Fungua app ya 1xBet, kisha nenda sehemu ya <strong>"Bet Slip"</strong> (iko chini katikati).<br>
+                    3. Bonyeza alama ya vidoti vitatu juu au kitufe cha kualika/kupakia mkeka, kisha chagua <strong>"Download Bet Slip"</strong>.<br>
+                    4. Paste au andika ile kodi uliyoinakili, kisha bonyeza OK. Mechi zote zitajipakia zenyewe, wewe weka kiasi chako cha kubet na ubonyeze "Bet".</p>
+                </div>
+            </div>
+
+            <!-- Swali la 4 -->
+            <div class="faq-item">
+                <div class="faq-question">Kwanini nitumie Promo Code wakati wa kusajili?</div>
+                <div class="faq-answer">
+                    <p>Kutumia Promo Code yetu kunakuwezesha kupata <strong>Bonus ya hadi 300%</strong> kwenye deposit yako ya kwanza. Pia, akaunti yako inatambuliwa rasmi chini ya group letu, jambo linalokuhakikishia usaidizi wa haraka kukiwa na shida yoyote ya kiufundi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER NDOGO YA WHATSAPP CHANNEL -->
+        <div class="whatsapp-compact-card">
+            <div class="wa-text-box">
+                <div class="wa-text-title">WhatsApp Channel</div>
+                <div class="wa-text-sub">Pata Mikeka ya Bure Kila Siku</div>
+            </div>
+            <a href="https://whatsapp.com/channel/0029VbCX75717EmyEsu1uO2C" target="_blank" class="wa-compact-btn">JIUNGE SASA</a>
+        </div>
+        <!-- /MWISHO WA BANNER -->
+
+        <div class="footer">
+            &copy; 2026 LEGEND WINNERS. All rights reserved.
+        </div>
     </div>
 
-  </div>
+    <!-- SCRIPT YA JAVASCRIPT KUFUNGUA NA KUFUNGALIA FAQ -->
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Kufunga maswali mengine yote yaliyokuwa wazi
+                faqItems.forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Kama halikuwa wazi, lifungue
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
